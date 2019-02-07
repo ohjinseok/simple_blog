@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <header>
+        <div class="mt-5">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h1>{{article.title}}</h1>
+                <span class="meta">Posted by
+                  <a href="#">{{article.author}}</a>
+                  on {{article.created_at}}</span>
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p>{{article.content}}</p>
+                </div>
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <a class="btn btn-secondary" href="/articles" role="button">글 목록</a>
+                    <a class="btn btn-secondary" href="/articles/{{article.id}}/edit" role="button">글 수정</a>
+                    <a class="btn btn-secondary" href="/articles/{{article.id}}/delete" role="button">글 삭제</a>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock %}
